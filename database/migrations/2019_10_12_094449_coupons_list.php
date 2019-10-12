@@ -21,6 +21,7 @@ class CouponsList extends Migration
             $table->text('description');     
             $table->bigInteger('points_cost');
             $table->double('points_cost_reduction',2,1)->default(0.0);
+            $table->date('expiry_date');
             $table->timestamps();           
 
             $table->foreign('partner_id')->references('id')->on('partners');

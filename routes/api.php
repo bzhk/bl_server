@@ -17,6 +17,9 @@ Route::middleware('apiauth')->get('coupons/list', 'Coupons@getList');
 Route::middleware('apiauth')->get('coupons/{id}', 'Coupons@getItem');
 
 Route::middleware('apiauth')->get('tags/list', 'Tags@getList');
+
 Route::middleware('apiauth')->get('points/list', 'Points@getList');
+Route::middleware('apiauth')->get('points/{id}', 'Points@getItem');
+
 
 
