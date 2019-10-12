@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class CouponsModel extends Model
 {
-    protected $table = 'coupons_values';
+    protected $table = 'coupons';
 
     public function values()
     {

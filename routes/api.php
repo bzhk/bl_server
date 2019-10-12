@@ -19,3 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 Route::get('coupons/list', 'Coupons@getList');
+Route::middleware('apiauth')->get('tags/list', 'TagController@getList');
