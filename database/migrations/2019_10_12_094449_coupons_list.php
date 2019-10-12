@@ -16,6 +16,7 @@ class CouponsList extends Migration
         Schema::create('coupons', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('partner_id');
+            $table->string('name');
             $table->string('img_url');
             $table->string('offert_url');
             $table->text('description');     
