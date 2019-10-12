@@ -1,0 +1,37 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class PartnersList extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('partners', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('app_code')->unique();
+            $table->string('short_name')->unique();
+            $table->string('name');
+            $table->text('desc');
+            $table->string('web_url');
+            $table->string('logo_url');
+            $table->timestamps();        
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        //
+    }
+}
