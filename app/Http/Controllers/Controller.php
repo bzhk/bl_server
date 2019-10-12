@@ -11,11 +11,11 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    private function parseError($e){
+    public function parseError($e){
         $code = $e->getCode();
-        $environment = App::environment();
-        var_dump($environment);
-        return;
+        // $environment = App::environment();
+        // var_dump($environment);
+        return $e->getMessage();
       
     }
 }
