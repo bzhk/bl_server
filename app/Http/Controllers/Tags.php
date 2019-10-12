@@ -13,7 +13,7 @@ class Tags extends Controller
             $tags = $this->getSQLList();
             return response($tags,200);
         } catch (\Exception $e) {
-            return response($e->getMessage(),200);
+            return response($e->getMessage(),500);
         }
     }
 

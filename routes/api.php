@@ -13,6 +13,9 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::middleware('apiauth')->post('login', 'Users@getContent');
+
+
 Route::middleware('apiauth')->get('coupons/list', 'Coupons@getList');
 Route::middleware('apiauth')->get('coupons/{id}', 'Coupons@getItem');
 
