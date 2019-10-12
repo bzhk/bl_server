@@ -20,7 +20,7 @@ class PointsList extends Migration
             $table->text('desc');
             $table->string('phone');
             $table->string('email');
-            $table->json('open')->default(`{"open":[
+            $table->json('open')->default( json_encode('{"open":[
                 {"Monday": "00:00-00:00"},
                 {"Tuesday": "00:00-00:00"},
                 {"Wednesday": "00:00-00:00"},
@@ -28,10 +28,10 @@ class PointsList extends Migration
                 {"Friday": "00:00-00:00"},
                 {"Saturday": "00:00-00:00"},
                 {"Sunday": "00:00-00:00"},
-            ]}`);
+            ]}'));
             $table->string('address');
-            $table->double('lang',10,2);
-            $table->double('lat',10,2);
+            $table->double('lat',25,9);
+            $table->double('lang',25,9);
             $table->timestamps();           
 
         });
