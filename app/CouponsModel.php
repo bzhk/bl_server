@@ -10,6 +10,11 @@ class CouponsModel extends Model
 
     public function values()
     {
-        return $this->hasMany('CouponsValuesModel');
+        return $this->hasMany('App\CouponsValuesModel','coupon_id','id');
+    }
+
+    public function partner()
+    {
+        return $this->belongsTo('App\PartnersModel','partner_id','id');
     }
 }

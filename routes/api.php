@@ -13,10 +13,10 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::middleware('apiauth')->get('coupons/list', 'Coupons@getList');
+Route::middleware('apiauth')->get('coupons/{id}', 'Coupons@getItem');
+
+Route::middleware('apiauth')->get('tags/list', 'Tags@getList');
+Route::middleware('apiauth')->get('points/list', 'Points@getList');
 
 
-Route::get('coupons/list', 'Coupons@getList');
-Route::middleware('apiauth')->get('tags/list', 'TagController@getList');
