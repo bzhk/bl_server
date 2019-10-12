@@ -32,7 +32,7 @@ class Users extends Controller
             $check = \Hash::check($password,$content['password']);
             if(!$check) throw new \Exception("Brak danych", 100);
             unset($content['password']);
-            return response($content,200);
+            return $content;
         } catch (\Exception $e) {
             throw new \Exception($e->getMessage(), 100);
         }
