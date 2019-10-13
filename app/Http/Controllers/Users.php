@@ -7,7 +7,7 @@ use App\User;
 
 class Users extends Controller
 {
-    public function getContent(request $req)
+    public function getContent(Request $req)
     {
         try {
            
@@ -33,6 +33,28 @@ class Users extends Controller
             if(!$check) throw new \Exception("Brak danych", 100);
             unset($content['password']);
             return $content;
+        } catch (\Exception $e) {
+            throw new \Exception($e->getMessage(), 100);
+        }
+    }
+
+    public function getContentByToken(Request $req)
+    {
+        try {
+            $token = $req->header('AuthUser');
+            $item = $this->getSQLContentByToken($token);
+            return response($item, 200);
+        } catch (\Exception $e) {
+            $resp = $this->parseError($e);
+            return response($resp,500);
+        }
+    }
+
+    private function getSQLContentByToken($token)
+    {
+        try {
+            $user = User::where('token',$token)->select('id','token','name','points','email','created_at')->first();        
+            return $user;
         } catch (\Exception $e) {
             throw new \Exception($e->getMessage(), 100);
         }

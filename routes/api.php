@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 */
 
 Route::middleware('apiauth')->post('login', 'Users@getContent');
+Route::middleware('apiauth')->get('me', 'Users@getContentByToken');
 
 Route::middleware('apiauth')->get('history', 'History@getList');
 
