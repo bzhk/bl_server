@@ -18,6 +18,7 @@ Route::middleware('apiauth')->post('login', 'Users@getContent');
 
 Route::middleware('apiauth')->get('coupons/list', 'Coupons@getList');
 Route::middleware('apiauth')->get('coupons/{id}', 'Coupons@getItem');
+Route::middleware('apiauth')->post('coupons/unlock/{id}', 'Coupons@unlockItem');
 
 Route::middleware('apiauth')->get('tags/list', 'Tags@getList');
 
