@@ -91,10 +91,10 @@ class Points extends Controller
             }
            
             $current_position = [
-                'lang_p5' => $current_position[1] + 0.051,
-                'lang_m5' => $current_position[1] - 0.051,
-                'lat_p5' => $current_position[0] + 0.051,
-                'lat_m5' => $current_position[0] - 0.051,
+                'lang_p5' => $current_position[1] + 1,
+                'lang_m5' => $current_position[1] - 1,
+                'lat_p5' => $current_position[0] + 1,
+                'lat_m5' => $current_position[0] - 1,
             ];
             return $current_position;
         } catch (\Exception $e) {
