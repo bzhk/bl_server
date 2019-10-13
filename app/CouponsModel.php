@@ -8,6 +8,11 @@ class CouponsModel extends Model
 {
     protected $table = 'coupons';
 
+    public function user()
+    {
+        return $this->hasMany('App\UsersCoupons','coupon_id','id');
+    }
+
     public function values()
     {
         return $this->hasMany('App\CouponsValuesModel','coupon_id','id');
