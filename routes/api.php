@@ -15,6 +15,7 @@ use Illuminate\Http\Request;
 
 Route::middleware('apiauth')->post('login', 'Users@getContent');
 
+Route::middleware('apiauth')->get('history', 'History@getList');
 
 Route::middleware('apiauth')->get('coupons/list', 'Coupons@getList');
 Route::middleware('apiauth')->get('coupons/{id}', 'Coupons@getItem');
@@ -25,6 +26,7 @@ Route::middleware('apiauth')->get('tags/list', 'Tags@getList');
 Route::middleware('apiauth')->get('points', 'Points@getFilteredList');
 Route::middleware('apiauth')->get('points/list', 'Points@getList');
 Route::middleware('apiauth')->get('points/{id}', 'Points@getItem');
+
 
 
 
